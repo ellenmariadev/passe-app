@@ -1,8 +1,10 @@
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
+import { PrismaModule } from './prisma/prisma.module.js';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [PrismaModule, ConfigModule.forRoot({ isGlobal: true })],
   controllers: [],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
